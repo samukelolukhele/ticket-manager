@@ -12,8 +12,8 @@ type Props = {};
 
 const Navbar = async (props: Props) => {
   const { isAuthenticated, getUser } = getKindeServerSession();
-  const user = await getUser();
   const isAuth = await isAuthenticated();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">

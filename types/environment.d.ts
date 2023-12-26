@@ -14,6 +14,9 @@ declare global {
       KINDE_SITE_URL: string;
       KINDE_POST_LOGOUT_REDIRECT_URL: string;
       KINDE_POST_LOGIN_REDIRECT_URL: string;
+      PLANETSCALE_USERNAME: string;
+      PLANETSCALE_PASSWORD: string;
+      PLANETSCALE_DATABASE_URL: string;
     }
   }
 }
