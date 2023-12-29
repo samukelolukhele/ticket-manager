@@ -20,6 +20,7 @@ model Category{
 model Ticket{
   id Int @id @default(autoincrement())
   title String
+  description String
   priority Int
   progress Int
   status Status @relation(fields: [statusId], references: [id])

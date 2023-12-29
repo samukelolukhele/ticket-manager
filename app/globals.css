@@ -26,3 +26,7 @@ body {
   right: 0;
   bottom: 0;
 }
+
+.dark-bg {
+  background-color: #212121;
+}

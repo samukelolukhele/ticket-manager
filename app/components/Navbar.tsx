@@ -67,9 +67,6 @@ const Navbar = async (props: Props) => {
                 <li className="nav-item">
                   <LogoutLink className="nav-link">Logout</LogoutLink>
                 </li>
-                <button className="nav-item btn btn-sm btn-primary ">
-                  Create Ticket
-                </button>
               </>
             )}
           </ul>
