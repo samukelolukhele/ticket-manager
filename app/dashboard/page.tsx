@@ -9,11 +9,11 @@ type Props = {};
 
 const dashboard = (props: Props) => {
   const { user, isLoading: userLoading } = useKindeBrowserClient();
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState("TICKET");
 
   return (
     <div className="dark-bg fluid min-vh-100 text-light ">
-      <Modal />
+      <Modal formType={modal} />
       <div className="container pt-4">
         <div className="d-flex fluid justify-content-between align-items-center">
           {userLoading ? (
@@ -28,8 +28,17 @@ const dashboard = (props: Props) => {
               className="btn btn-md btn-primary"
               data-target="#formModal"
               data-toggle="modal"
+              onClick={() => setModal("TICKET")}
             >
               Create Ticket <i className="bi bi-plus"></i>
+            </button>
+            <button
+              className="btn btn-md btn-light"
+              data-target="#formModal"
+              data-toggle="modal"
+              onClick={() => setModal("CATEGORY")}
+            >
+              Create Category <i className="bi bi-plus"></i>
             </button>
           </div>
         </div>

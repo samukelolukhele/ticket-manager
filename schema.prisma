@@ -13,7 +13,7 @@ model Category{
   id Int @id @default(autoincrement())
   title String
   description String
-  userId Int @unique
+  userId String @unique
   ticket Ticket[]
 }
 
@@ -23,6 +23,7 @@ model Ticket{
   description String
   priority Int
   progress Int
+  userId String @unique
   status Status @relation(fields: [statusId], references: [id])
   statusId Int @unique
   category Category @relation(fields: [categoryId], references: [id])

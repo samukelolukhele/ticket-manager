@@ -12,7 +12,7 @@ const useData = () => {
 
   const tickets = useQuery({
     queryKey: ["get-all-user-tickets"],
-    queryFn: async () => fetchTickets(),
+    queryFn: () => fetchTickets(),
   });
 
   const statuses = useQuery({
@@ -22,7 +22,7 @@ const useData = () => {
 
   const categories = useQuery({
     queryKey: ["get-all-user-categories"],
-    queryFn: async () => fetchCategories,
+    queryFn: () => fetchCategories(),
   });
 
   return {

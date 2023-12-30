@@ -4,7 +4,7 @@ import useData from "./hooks/useData";
 type Props = {};
 
 const CreateTicketForm = (props: Props) => {
-  const { statuses } = useData();
+  const { statuses, categories } = useData();
 
   return (
     <form>
@@ -91,12 +91,16 @@ const CreateTicketForm = (props: Props) => {
           <option disabled selected value="">
             Select a category
           </option>
+          {categories.data &&
+            categories.data.map((category) => (
+              <option value={category.id}>{category.title}</option>
+            ))}
         </select>
       </div>
       <div className="form-group">
         <label htmlFor="ticketStatus">Status</label>
         <select
-          defaultValue="default"
+          value="default"
           className="form-control"
           name="ticketStatus"
           id="ticketStatus"

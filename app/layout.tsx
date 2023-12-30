@@ -7,6 +7,7 @@ import BootstrapClient from "./components/BootstrapClient";
 import Navbar from "./components/Navbar";
 import ReactQueryClientProvider from "./components/ReactQueryClientProvider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,10 +27,10 @@ export default function RootLayout({
         <body className={inter.className}>
           <Navbar />
           {children}
+          <ToastContainer />
+          <ReactQueryDevtools initialIsOpen />
+          <BootstrapClient />
         </body>
-        <ReactQueryDevtools initialIsOpen />
-
-        <BootstrapClient />
       </html>
     </ReactQueryClientProvider>
   );

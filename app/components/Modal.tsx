@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
 import CreateTicketForm from "./CreateTicketForm";
+import CreateCategoryForm from "./CreateCategoryForm";
 
-type Props = {};
+type Props = {
+  formType: "TICKET" | "CATEGORY" | string;
+};
 
-const Modal = (props: Props) => {
+const Modal = ({ formType }: Props) => {
   return (
     <div className="modal text-dark" tabIndex={-1} id="formModal">
       <div className="modal-dialog">
@@ -21,13 +24,19 @@ const Modal = (props: Props) => {
             </button>
           </div>
           <div className="modal-body">
-            <CreateTicketForm />
+            {formType === "TICKET" ? (
+              <CreateTicketForm />
+            ) : (
+              <CreateCategoryForm />
+            )}
           </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-primary">
-              Create Ticket
-            </button>
-          </div>
+          {/* <div className="modal-footer">
+            <input
+              type="submit"
+              className="btn btn-primary"
+              value={` Create ${formType === "TICKET" ? "Ticket" : "Category"}`}
+            />
+          </div> */}
         </div>
       </div>
     </div>
